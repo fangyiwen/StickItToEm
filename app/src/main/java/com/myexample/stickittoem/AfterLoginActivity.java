@@ -240,6 +240,7 @@ public class AfterLoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SendHistoryActivity.class);
         intent.putExtra("username", username);
         intent.putExtra("deviceToken", deviceToken);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
@@ -247,10 +248,10 @@ public class AfterLoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ReceiveHistoryActivity.class);
         intent.putExtra("username", username);
         intent.putExtra("deviceToken", deviceToken);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
-    // Code referenced from Dr. Dan Feinberg's sample code this week
     public void fcmSend(final String sender, final String targetToken, final String sticker) {
         new Thread(new Runnable() {
             @Override
