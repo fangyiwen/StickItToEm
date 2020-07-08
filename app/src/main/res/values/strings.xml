@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Stick It To \'Em</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="username_string">Username</string>
+    <string name="no_of_sending_stickers_downloading_string">No. of Sending Stickers: Downloading...</string>
+    <string name="sending_history_string">Sending History</string>
+    <string name="receiving_history_string">Receiving History</string>
+    <string name="receiver_s_username_string">Receiver\'s Username</string>
+    <string name="send_string">Send</string>
+    <string name="try_me_string">Try Me!</string>
+    <string name="click_one_emoji_to_pick_click_reset_to_cancel_string">Click one emoji to pick. Click Resetto cancel.</string>
+    <string name="panel_of_stickers_string">Panel of Stickers</string>
+    <string name="reset_string">Reset</string>
+    <string name="check_username_associated_with_this_device_token_string">Check Username Associated with This Device Token</string>
+    <string name="login_string">Login</string>
+    <string name="dissociate_username_with_this_device_string">Dissociate Username with This Device</string>
+    <string name="textview_string">TextView</string>
+    <string name="new_message_string">New Message</string>
+</resources>

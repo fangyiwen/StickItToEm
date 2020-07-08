@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1026766799569",
+    "firebase_url": "https://stick-it-to-em-4d663.firebaseio.com",
+    "project_id": "stick-it-to-em-4d663",
+    "storage_bucket": "stick-it-to-em-4d663.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026766799569:android:44b473b4145e9be87bfbf0",
+        "android_client_info": {
+          "package_name": "com.myexample.stickittoem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026766799569-n79q1kvsadbun88utq9rlg5i59gs2jnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClmZmH7xVHxzmvSXqehCAqX769GTp80e0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026766799569-n79q1kvsadbun88utq9rlg5i59gs2jnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
