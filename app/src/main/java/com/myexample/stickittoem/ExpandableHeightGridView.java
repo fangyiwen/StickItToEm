@@ -2,9 +2,9 @@ package com.myexample.stickittoem;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-
 
 public class ExpandableHeightGridView extends GridView {
     boolean expanded = false;
@@ -22,13 +22,14 @@ public class ExpandableHeightGridView extends GridView {
     }
 
     public boolean isExpanded() {
-        return this.expanded;
+        return expanded;
     }
 
+    @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         if (isExpanded()) {
-            int expandSpec = MeasureSpec.makeMeasureSpec(MEASURED_SIZE_MASK,
-                    MeasureSpec.AT_MOST);
+            int expandSpec = View.MeasureSpec.makeMeasureSpec(
+                    Integer.MAX_VALUE >> 2, View.MeasureSpec.AT_MOST);
             super.onMeasure(widthMeasureSpec, expandSpec);
 
             ViewGroup.LayoutParams params = getLayoutParams();

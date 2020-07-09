@@ -20,7 +20,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,9 +50,9 @@ public class AfterLoginActivity extends AppCompatActivity {
     private String username;
     private String deviceToken;
     private ArrayList<String> stickersArray;
-    private GridView gridView;
     private String targetToken;
     private Button button3;
+    private ExpandableHeightGridView gridView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +70,7 @@ public class AfterLoginActivity extends AppCompatActivity {
         textView11 = findViewById(R.id.textView11);
         textView12 = findViewById(R.id.textView12);
         stickersArray = new ArrayList<>();
-        gridView = findViewById(R.id.gridView);
+        gridView = (ExpandableHeightGridView) findViewById(R.id.grid_view);
         button3 = findViewById(R.id.button3);
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -113,7 +112,12 @@ public class AfterLoginActivity extends AppCompatActivity {
         });
 
         stickersArray.add("Loading...");
+
+        // ExpandableHeightGridView.java to customise GridView is referenced from
+        // https://readyandroid.wordpress.com/how-to-use-full-height-listviewexpandableheightlistview-and-gridviewexpandableheightgridview-in-scrollview-android/
+        // https://gist.github.com/Kishanjvaghela/248b86b9e1c9fbcb8cd7
         gridView.setAdapter(new ArrayAdapter<>(AfterLoginActivity.this, R.layout.simple_list_item_1, stickersArray));
+        gridView.setExpanded(true);
         // Click to pick a sticker
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
