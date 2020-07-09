@@ -14,6 +14,5 @@
     <string name="check_username_associated_with_this_device_token_string">Check Username Associated with This Device Token</string>
     <string name="login_string">Login</string>
     <string name="dissociate_username_with_this_device_string">Dissociate Username with This Device</string>
-    <string name="textview_string">TextView</string>
     <string name="new_message_string">New Message</string>
 </resources>

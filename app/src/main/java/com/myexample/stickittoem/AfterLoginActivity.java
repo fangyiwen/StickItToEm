@@ -175,12 +175,12 @@ public class AfterLoginActivity extends AppCompatActivity {
         final String receiver = receiverEditText.getText().toString().trim();
         final String candidate = textView12.getText().toString();
 
-        // Reset input EditText as empty after button click
-        receiverEditText.setText("");
         if (receiver.equals("") || candidate.equals("")) {
             Toast.makeText(this, "Username and sticker can't be empty!", Toast.LENGTH_SHORT).show();
             return;
         }
+        // Reset input EditText as empty after button click
+        receiverEditText.setText("");
 
         // Disable button before sending is done
         button3.setEnabled(false);
@@ -218,7 +218,7 @@ public class AfterLoginActivity extends AppCompatActivity {
 
                     // Upload to the database
                     if (!targetToken.equals("offline")) {
-                        // Send notification via FCM if the receiver is online
+                        // Send notification via FCM if the receiver has a token
                         pushMessagesRef.setValue(new Message(receiver, username, candidate, time, false));
                         fcmSend(username, targetToken, candidate);
                     } else {
@@ -240,7 +240,6 @@ public class AfterLoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SendHistoryActivity.class);
         intent.putExtra("username", username);
         intent.putExtra("deviceToken", deviceToken);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
@@ -248,10 +247,10 @@ public class AfterLoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ReceiveHistoryActivity.class);
         intent.putExtra("username", username);
         intent.putExtra("deviceToken", deviceToken);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
+    // Code referenced from Dr. Dan Feinberg's sample code this week
     public void fcmSend(final String sender, final String targetToken, final String sticker) {
         new Thread(new Runnable() {
             @Override

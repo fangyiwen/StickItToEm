@@ -24,19 +24,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             sendNotification(data.get("sender"), data.get("sticker"));
         }
 
-        // Check if message contains a notification payload.
-        if (remoteMessage.getNotification() != null) {
-        }
+        // (Ignored) Check if message contains a notification payload.
+//        if (remoteMessage.getNotification() != null) {
+//        }
     }
 
-    //    Code referred from https://developer.android.com/training/notify-user/build-notification
+    // Code referenced from https://developer.android.com/training/notify-user/build-notification
     // Send a notification when receiving at frontend
     public void sendNotification(String sender, String sticker) {
         String CHANNEL_ID = "Channel_StickItToEm";
         Intent intent = new Intent(this, ShowFCMActivity.class);
         intent.putExtra("sender", sender);
         intent.putExtra("sticker", sticker);
-        // FLAG_UPDATE_CURRENT needed to send Extra data
+        // FLAG_UPDATE_CURRENT needed to send and update Extra data
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)

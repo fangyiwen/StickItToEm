@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         // Update new token associated with username
         mDatabase.child("users").child(username).child("token").setValue(deviceToken);
 
-        // Check the same token but different username, set them as offline
+        // Check the same token but different username, set as offline
         mDatabase.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
